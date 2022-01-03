@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { saveAs } from "file-saver";
 import { FiDownload } from "react-icons/fi";
 import GridLoader from "react-spinners/GridLoader";
+import { NotFound } from "../pages";
 
 const SinglePhoto = () => {
   const [photo, setPhoto] = useState();
@@ -53,11 +54,7 @@ const SinglePhoto = () => {
   }
 
   if (error) {
-    return (
-      <div className="flex justify-center items-center h-[35rem]">
-        Something went wrong!
-      </div>
-    );
+    return <NotFound />;
   }
 
   return (
