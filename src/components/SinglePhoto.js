@@ -4,6 +4,7 @@ import { saveAs } from "file-saver";
 import { FiDownload } from "react-icons/fi";
 import GridLoader from "react-spinners/GridLoader";
 import { NotFound } from "../pages";
+import DefaultProfileImage from "../images/default-profile.png";
 
 const SinglePhoto = () => {
   const [photo, setPhoto] = useState();
@@ -71,6 +72,9 @@ const SinglePhoto = () => {
               src={photo.userImageURL}
               alt={photo.user}
               className="rounded-full w-[4rem] h-[4rem]"
+              onError={(e) => {
+                e.target.src = DefaultProfileImage;
+              }}
             />
             <h1 className="text-mono text-xl font-bold">{photo.user}</h1>
           </div>

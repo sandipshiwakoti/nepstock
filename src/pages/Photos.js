@@ -91,7 +91,7 @@ const Photos = () => {
           />
         </button>
       </form>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[1.5rem]">
+      <div className="grid image-gallery grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[1.5rem]">
         {loading ? (
           <h1>{}</h1>
         ) : photos.length > 0 ? (
