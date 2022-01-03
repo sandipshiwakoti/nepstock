@@ -14,16 +14,23 @@ const Photos = () => {
     try {
       let searchURL = `https://pixabay.com/api?page=${page}&q=${search}&key=${process.env.REACT_APP_API_KEY}`;
       const response = await fetch(searchURL);
+      if (response.status === 400) {
+        if (process.env.NODE_ENV === "production") {
+          console.clear();
+        }
+        throw new Error("Photo not found!");
+      }
       const { hits: data } = await response.json();
       setPhotos((oldPhotos) => {
         if (page === 1) {
           return data;
         } else {
-          return [...photos, ...data];
+          return [...oldPhotos, ...data];
         }
       });
       setLoading(false);
     } catch (err) {
+      console.log(err);
       setLoading(false);
     }
   };
@@ -34,11 +41,11 @@ const Photos = () => {
     fetchData();
   };
 
-  useEffect(() => {
-    setPage(1);
-    fetchData();
-    // eslint-disable-next-line
-  }, []);
+  // useEffect(() => {
+  //   // setPage(1);
+  //   fetchData();
+  //   // eslint-disable-next-line
+  // }, [setPage]);
 
   useEffect(() => {
     fetchData();
