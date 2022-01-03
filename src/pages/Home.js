@@ -24,7 +24,7 @@ const HeroArea = () => {
       <h1 className="section-title !text-white">Awesome Images</h1>
       <p className="font-mono text-gray-200 font-bold text-xl md:text-2xl max-w-[40rem] text-center mb-[1rem]">
         Browse high quality stock images and royalty free images for your
-        projects.
+        projects
       </p>
       <form className="flex relative" onSubmit={handleSubmit}>
         <input
