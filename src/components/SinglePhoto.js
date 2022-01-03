@@ -15,7 +15,7 @@ const SinglePhoto = () => {
       const URL = `https://pixabay.com/api/?id=${id}&key=${process.env.REACT_APP_API_KEY}&type=photo`;
       const response = await fetch(URL);
       if (response.status === 400) {
-        if (process.env.NODE_ENV === "production") {
+        if (process.env.NODE_ENV === "development") {
           console.clear();
         }
         throw new Error("Something went wrong!");
