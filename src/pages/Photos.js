@@ -15,7 +15,7 @@ const Photos = () => {
       let searchURL = `https://pixabay.com/api?page=${page}&q=${search}&key=${process.env.REACT_APP_API_KEY}`;
       const response = await fetch(searchURL);
       if (response.status === 400) {
-        if (process.env.NODE_ENV === "development") {
+        if (process.env.NODE_ENV === "production") {
           console.clear();
         }
         throw new Error("Photo not found!");
