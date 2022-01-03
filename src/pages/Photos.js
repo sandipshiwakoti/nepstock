@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaArrowUp } from "react-icons/fa";
 import Photo from "../components/Photo";
 import { useGlobalContext } from "../context";
 import GridLoader from "react-spinners/GridLoader";
@@ -70,6 +70,7 @@ const Photos = () => {
 
   useEffect(() => {
     searchRef.current.focus();
+    window.scrollTo(0, 0);
   }, []);
 
   return (
@@ -109,6 +110,15 @@ const Photos = () => {
         loading={loading}
         css={{ display: "block", margin: "0 auto" }}
         size={25}
+      />
+      <FaArrowUp
+        className="fixed bottom-0 right-0 text-white cursor-pointer -translate-x-2 -translate-y-3 text-3xl bg-slate-700 rounded-md p-[.2rem] z-50"
+        onClick={() => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        }}
       />
     </div>
   );

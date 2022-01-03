@@ -34,9 +34,11 @@ const SinglePhoto = () => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     fetchData();
     // eslint-disable-next-line
   }, []);
+
   const downloadImage = () => {
     saveAs(photo.largeImageURL, `nepstock-image-${id}.jpg`);
   };

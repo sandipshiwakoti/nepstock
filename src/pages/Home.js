@@ -16,6 +16,7 @@ const HeroArea = () => {
 
   useEffect(() => {
     searchRef.current.focus();
+    window.scrollTo(0, 0);
   }, []);
 
   return (
