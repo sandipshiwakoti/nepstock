@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { saveAs } from "file-saver";
 import { FiDownload } from "react-icons/fi";
+import { FaSearch } from "react-icons/fa";
 import GridLoader from "react-spinners/GridLoader";
 import { NotFound } from "../pages";
 import DefaultProfileImage from "../images/default-profile.png";
@@ -120,9 +121,16 @@ const SinglePhoto = () => {
             className="bg-green-700 w-full text-white text-center px-[2rem] py-[.5rem] mt-[1rem] font-semibold rounded-md"
             onClick={downloadImage}
           >
-            <FiDownload className="inline-block mr-[.2rem]" />
+            <FiDownload className="inline-block mr-[.4rem]" />
             Free Download
           </button>
+          <Link
+            to="/photos"
+            className="block bg-cyan-500 w-full text-white text-center px-[2rem] py-[.5rem] mt-[1rem] font-semibold rounded-md"
+          >
+            <FaSearch className="inline-block mr-[.4rem]" />
+            Search More
+          </Link>
         </div>
       </div>
     </div>
