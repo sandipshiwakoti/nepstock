@@ -14,7 +14,11 @@ const Photo = ({
   return (
     <Link to={`/photos/${id}`}>
       <div className="bg-white shadow-xl relative group overflow-hidden">
-        <img src={image} alt={type} className="w-full h-[15rem] object-cover" />
+        <img
+          src={image}
+          alt={type}
+          className="w-full h-[15rem] object-cover rounded-sm"
+        />
         <div className="flex justify-between items-center absolute bottom-0 bg-[rgba(0,0,0,.5)]  w-full p-2 transition-all translate-y-full group-hover:translate-y-0">
           <div className="flex gap-1 items-center">
             <img
