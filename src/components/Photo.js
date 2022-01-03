@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import DefaultProfileImage from "../images/default-profile.png";
 
 const Photo = ({
   id,
@@ -20,6 +21,9 @@ const Photo = ({
               src={userImageURL}
               alt={user}
               className="rounded-full w-[1.8rem] h-[1.8rem]"
+              onError={(e) => {
+                e.target.src = DefaultProfileImage;
+              }}
             />
             <h1 className="font-bold font-mono text-sm capitalize text-white">
               {user}
