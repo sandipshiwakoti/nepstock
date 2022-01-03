@@ -18,7 +18,7 @@ const HeroArea = () => {
     setSearch("");
     searchRef.current.focus();
     window.scrollTo(0, 0);
-  }, []);
+  }, [setSearch]);
 
   return (
     <div className="hero-area p-2">
