@@ -37,10 +37,12 @@ const Photos = () => {
   useEffect(() => {
     setPage(1);
     fetchData();
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line
   }, [page]);
 
   useEffect(() => {

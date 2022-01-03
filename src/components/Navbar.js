@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
 

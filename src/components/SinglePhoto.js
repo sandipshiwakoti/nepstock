@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { saveAs } from "file-saver";
 import { FiDownload } from "react-icons/fi";
 import GridLoader from "react-spinners/GridLoader";
@@ -26,8 +26,8 @@ const SinglePhoto = () => {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line
   }, []);
-
   const downloadImage = () => {
     saveAs(photo.largeImageURL, `nepstock-image-${id}.jpg`);
   };
